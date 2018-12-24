@@ -1,6 +1,9 @@
 # silly macOS
 .DS_Store
 
+# unwanted files
+*.pdf
+
 # build files
 build/
 
