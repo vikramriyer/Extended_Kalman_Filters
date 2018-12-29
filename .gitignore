@@ -6,6 +6,7 @@
 
 # build files
 build/
+.project
 
 # editor config
 .vscode/
