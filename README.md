@@ -29,3 +29,37 @@ _Calculate the Error in the Estimate_ <br>
 We use the calculated current estimate and the kalman gain to find out the error so that we can feed it back when calculating the kalman gain for the next instance of time.
 
 Now for each of the above step, we get an estimate which says how the object should be moving. Let's look at the mathematics behind this in the below sections.
+
+#### Kalman Gain Calculation
+
+KG = Kalman Gain <br>
+E<sub>est</sub> = Error in estimate <br>
+E<sub>mea</sub> = Error in data (measurement) <br>
+
+KG = E<sub>est</sub> / (E<sub>est</sub> + E<sub>mea</sub>)
+
+0 <= KG <= 1
+
+#### Current Estimate Calculation
+
+Lets say, <br>
+EST<sub>t</sub> = current estimate <br>
+EST<sub>t-1</sub> = previous estimate <br>
+MES = Measurement <br>
+then, 
+
+EST<sub>t</sub> = EST<sub>t-1</sub> + KG[MEA - EST<sub>t-1</sub>]
+
+Higher the KG, higher the E<sub>est</sub> and lower the E<sub>mea</sub> <br>
+Lower the KG, lower the E<sub>est</sub> and higher the E<sub>mea</sub>
+
+So, by looking at the above proportions, it should make sense to understand that, over the time, the KG should get smaller and smaller as our estimates will keep getting better, the error in data (measurement) being constant.
+
+#### Error in the Estimate Calculation
+
+E<sub>est_t</sub> = ( E<sub>mea</sub> * E<sub>est_t-1</sub> ) / (E<sub>mea</sub> + E<sub>estP_t-1</sub>)
+
+Sometimes, the above eq<sup>n</sup> can also be written as, <br>
+E<sub>est_t</sub> = (1 - KG)(E<sub>est_t-1</sub>)
+
+With the above eq<sup>ns</sup>, we can definitely say that the error in the estimates will always get smaller. 
