@@ -3,6 +3,7 @@
 
 # unwanted files
 *.pdf
+*.bak
 
 # build files
 build/
