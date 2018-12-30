@@ -120,3 +120,10 @@ Sometimes, the above eq<sup>n</sup> can also be written as, <br>
 E<sub>est_t</sub> = (1 - KG)(E<sub>est_t-1</sub>)
 
 With the above eq<sup>ns</sup>, we can definitely say that the error in the estimates will always get smaller. 
+
+## References
+- http://www.ilectureonline.com/lectures/subject/SPECIAL%20TOPICS/26/190/1966
+- https://www.youtube.com/watch?v=5Pu558YtjYM&list=PLgnQpQtFTOGQrZ4O5QzbIHgl3b1JHimN_&index=4
+- https://nbviewer.ipython.org/github/rlabbe/Kalman-and-Bayesian-Filters-in-Python/blob/master/05-Multivariate-Gaussians.ipynb
+- https://arxiv.org/pdf/1710.04055.pdf
+- https://www.bzarg.com/p/how-a-kalman-filter-works-in-pictures/
