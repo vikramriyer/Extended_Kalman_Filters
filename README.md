@@ -5,6 +5,50 @@ We will use RMSE as the error metric.
 
 ---
 
+## Steps to run the project
+> Note: The current version as of 30<sup>th</sup> December, 2018 is tested on Ubuntu. I also assume that you have other [dependencies](#dependencies) installed on your system.
+1. Download the simulator for this project from [here](https://github.com/udacity/self-driving-car-sim/releases)
+2. Clone this repository using below command on the shell
+```bash
+git clone https://github.com/vikramriyer/Extended_Kalman_Filters.git
+```
+3. Navigate to the project top directory i.e. _Extended-Kalman-Filters_.
+4. create a directory to build the project using below command and navigate to it
+```bash
+mkdir build; cd build
+```
+5. Build the project
+```bash
+cmake .. && make
+```
+6. Run the project
+```bash
+./ExtendedKF
+```
+7. Since the server is now running, open the simulator and run it. Choose the _Graphics Quality_ as _Fastest_ and Screen Resolution as _800x600_. This configuration ensures the system runs smoothly and does not end up consuming a lot of cpu resources.
+8. Choose _Project 1/2: EKF and UKF_ and press _Select_.
+9. Finally, check if __Connected!!__ is displayed on the console where you ran _ExtendedKF_ in the 6<sup>th</sup> step and if everything is ok as expected, click _Start_. You will be able to see the car navigate and at the same time, the RMSE for x, y, vx, vy getting updated due to the calculations at each instance or rather input.
+
+<a id="dependencies"></a>
+## Installing Dependencies
+
+* cmake >= 3.5
+  * All OSes: [click here for installation instructions](https://cmake.org/install/)
+* make >= 4.1 (Linux, Mac), 3.81 (Windows)
+  * Linux: make is installed by default on most Linux distros
+  * Mac: [install Xcode command line tools to get make](https://developer.apple.com/xcode/features/)
+  * Windows: [Click here for installation instructions](http://gnuwin32.sourceforge.net/packages/make.htm)
+* gcc/g++ >= 5.4
+  * Linux: gcc / g++ is installed by default on most Linux distros
+  * Mac: same deal as make - [install Xcode command line tools](https://developer.apple.com/xcode/features/)
+  * Windows: recommend using [MinGW](http://www.mingw.org/)
+* uWebSocketIO => [Download](https://github.com/uWebSockets/uWebSockets) for either Linux or Mac systems. 
+
+
+> Note: Read below only if you seek additional technical details about Kalman Filters
+
+__Below I discuss about Kalman Filters, their applications, components that constitute the Kalman Filters and other relevant details. It is an optional and lengthy read, and is a work in progress. If I happen to convert into a blog series, will update the links here. Lets get rolling!__
+
 __Q. What is a kalman filter?__ <br>
 It's a repetitive/iterative mathematical process that has some inputs plugged into equations to predict/estimate the next value in terms of position, velocity, etc of any object being measured, when the measured values contain unpredicted errors, uncertainty, or variation.
 
